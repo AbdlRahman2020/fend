@@ -83,43 +83,16 @@ document.addEventListener('DOMContentLoaded', makeNavBar (sections));
 
 
 // Scroll to section on link click
-// Define selector for selecting 
-        // anchor links with the hash 
-        let anchorSelector = '.navbar__menu'; 
-      
-        // Collect all such anchor links 
-        let anchorList =  
-            document.querySelectorAll(anchorSelector); 
-          
-        // Iterate through each of the links 
-        anchorList.forEach(link => { 
-            link.onclick = function (e) { 
-      
-                // Prevent scrolling if the 
-                // hash value is blank 
-                e.preventDefault(); 
-          
-                // Get the destination to scroll to 
-                // using the hash property 
-                let destination =  
-                    document.querySelector(this.hash); 
-          
-                // Scroll to the destination using 
-                // scrollIntoView method 
-                destination.scrollIntoView({ 
-                    behavior: 'smooth' 
-                }); 
-            } 
-        }); 
+document.querySelectorAll('.secion').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        //console.log(this.getAttribute("section1"));
+        document.querySelector('href').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
 
 
 // Set sections as active
-function myFunction() {
-    var x = document.getElementById("navbar__list");
-    if (x.className === "navbar__menu") {
-      x.className += " hover";
-    } else {
-      x.className = "navbar__menu";
-    }
-  }
 
